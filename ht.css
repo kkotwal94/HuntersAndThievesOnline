@@ -7,9 +7,12 @@ table {
 	margin: 0 auto;
 	border: 2px solid black; 
 	border-collapse: collapse;
+	table-layout: fixed;
+	width: 520px;
+	height: 520px;
 }
 td {
-    width: 50px; height: 50px;
+    width: 52px; height: 52px;
     border-top: 2px solid black; 
     border-left: 2px solid black;
 }
@@ -69,34 +72,6 @@ td.hasBluePawn{
 	background-position: center;
 }
 
-td.hasDecoyBlueThief {
-	background-image: url("http://i.imgur.com/RCLPB6s.png");
-	text-align: center;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-td.hasDecoyBlueHunter {
-	background-image: url("http://i.imgur.com/2VmSFfI.png");
-	text-align: center;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-td.hasDecoyRedThief {
-	background-image: url("http://i.imgur.com/ldXuWru.png");
-	text-align: center;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-td.hasDecoyRedHunter {
-	background-image: url("http://i.imgur.com/rmRCFeJ.png");
-	text-align: center;	
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
 td.hasGoldInvis {
 
 
@@ -120,7 +95,7 @@ td.hasMine{
 }
 
 
-#toolbox {margin-bottom:1%; visibility:hidden; border: 1px solid black;  }
+#toolbox {margin-bottom:1%; visibility:hidden; border: 1px solid black; height: 48px; width: 560px; }
 #parent {
 }
 
@@ -350,4 +325,3 @@ transition: background-color .15s ease-out;
 	padding: 20px;
 	border: 1px solid green;
 }
-/*red*/
