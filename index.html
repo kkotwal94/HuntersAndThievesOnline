@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hunter and Thief</title>
+    <link rel="stylesheet" type="text/css" href="ht.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="navbar.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>  
+
+</head>
+
+<body>
+    
+<nav id="mainNav" class="mainNav">
+	<div class="container">
+		<div class="logo"><a href="#">Hunters and <strong>Thieves</strong></a></div>
+		<label class="navBars" for="xBxHack">
+			<i class="fa fa-bars"></i>
+		</label>
+		<ul id="menu" class="menu">
+			
+			<li><a href="#">About</a></li>
+			<li><a href="https://github.com/kkotwal94/HuntersAndThief">Code</a></li>
+			<li><a href="http://pastebin.com/UMGahaqT">Tutorial</a></li>
+		</ul>
+	</div>
+   </nav>
+
+    <div id="wrapper">
+        <div id="gameContent" ondrop="null" ondragover="null">
+            <div id="toolbox" ondrop="null" ondragover="null">
+                <img id="mine1" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="mine2" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="mine3" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="mine4" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="mine5" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="blueunderling1" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="blueunderling2" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="blueunderling3" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="blueunderling4" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="blueunderling5" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="blueunderling6" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="blueunderling7" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="blueunderling8" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="blueunderling9" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="blueunderling10" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redunderling1" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redunderling2" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redunderling3" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redunderling4" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redunderling5" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redunderling6" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redunderling7" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redunderling8" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redunderling9" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redunderling10" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redhunter1" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="redthief1" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="bluehunter1" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="bluethief1" src="" draggable="true" ondragstart="drag(event)"/>
+                <img id="gold" src="" draggable="true" ondragstart="drag(event)"/>
+            </div>
+        
+        </div>
+        <div id="nickname">
+            <h3>Login Name:</h3>
+	        <form id="dif" class = "dif" action = "" onsubmit="return setNickname()">
+        	<input class = "input" id = "nickNames" placeholder = "Enter Nickname.."/>
+        	
+	        </form>
+	        
+	<h3 id="loggedin">Currently Logged in as: </h3>
+        </div>
+        <div id="lob">
+            <h3>Lobby Room</h3>
+            <ul id="lobbyRoom">
+                
+            </ul>
+        </div>
+        <div id="usersonline">
+            <h3>Users Online</h3>
+            <ul id="currentlyonline">
+                
+            </ul>
+        </div>
+        <div id="chatArea">
+            <div id="messages">    
+                <ul id="listmessages">
+                </ul>
+            </div>
+            <div id="chatbox">
+                <form name="chatsubmit"  onsubmit="return inputMessage()">
+                <input id="chatinput" name="chatinput" placeholder="Insert Message here"/>
+                </form>
+            </div>
+    </div>
+    
+    </div>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+    <script src="models.js"></script>
+    <script src="initObjects.js"></script>
+    <script src="movementLogic.js"></script>
+    <script src="connection.js"></script>
+</body>
+</html>

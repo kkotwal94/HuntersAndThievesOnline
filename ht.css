@@ -1,0 +1,353 @@
+body {
+ background-color: #003c5d;
+ font-family: 'Economica', sans-serif;
+}
+
+table {
+	margin: 0 auto;
+	border: 2px solid black; 
+	border-collapse: collapse;
+}
+td {
+    width: 50px; height: 50px;
+    border-top: 2px solid black; 
+    border-left: 2px solid black;
+}
+td.selectedH{
+	 border: 2px solid yellow; 
+}
+td.selectedT{
+	 border: 2px solid lime; 
+}
+td.selectedU{
+	 border: 2px solid purple; 
+}
+td.validH{
+	 background-color: white; 
+}
+td.validT{
+	 background-color: white;
+}
+td.validU{
+	 background-color: white;
+}
+td.hasRedHunter{
+	background-image: url("http://i.imgur.com/rmRCFeJ.png");
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+td.hasRedThief{
+	background-image: url("http://i.imgur.com/ldXuWru.png");
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+td.hasRedPawn{
+	background-image: url("http://i.imgur.com/6YRQKbO.png");
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+td.hasBlueHunter{
+	background-image: url("http://i.imgur.com/2VmSFfI.png");
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+td.hasBlueThief{
+	background-image: url("http://i.imgur.com/RCLPB6s.png");
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+td.hasBluePawn{
+	background-image: url("http://i.imgur.com/MGiZ46C.png");
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+td.hasDecoyBlueThief {
+	background-image: url("http://i.imgur.com/RCLPB6s.png");
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+td.hasDecoyBlueHunter {
+	background-image: url("http://i.imgur.com/2VmSFfI.png");
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+td.hasDecoyRedThief {
+	background-image: url("http://i.imgur.com/ldXuWru.png");
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+td.hasDecoyRedHunter {
+	background-image: url("http://i.imgur.com/rmRCFeJ.png");
+	text-align: center;	
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+td.hasGoldInvis {
+
+
+	
+}
+
+td.hasGold {
+	background-image: url("https://cdn0.iconfinder.com/data/icons/48_px_web_icons/48/money_gold.png");
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+td.hasMineInvis{
+	
+}
+td.hasMine{
+	background-image: url("http://dj9e9nrc3eeux.cloudfront.net/icons/_mines_weeper_xp.png");
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+#toolbox {margin-bottom:1%; visibility:hidden; border: 1px solid black;  }
+#parent {
+}
+
+
+
+/*tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {
+	background: white;
+}
+*/
+
+.myCell {
+	background: blue;
+}
+
+.enemyCell {
+	background: red;
+}
+
+#gameContent {
+	text-align: center;
+	margin: 0 auto;
+	width: 30%;
+	margin-top: 2%;
+
+}
+
+#gameTitle {
+	text-align: center;
+}
+
+#chatArea {
+	position: fixed;
+	right: 0;
+	top: 0;
+	height:100%;
+	width: 20%;
+
+	background-color: #001A33;
+	
+}
+
+#messages {
+	height: 95%;
+	color: white;
+	 overflow:auto;
+}
+
+#listmessages {
+	list-style:none;
+	word-wrap : break-word;
+	padding: 5px;
+	margin: 0;
+	 overflow:auto;
+}
+
+#chatbox {
+	height: 5%;
+
+}
+
+#chatinput {
+	width: 100%;
+	height: 98%;
+}
+
+#nickname {
+
+	text-align: center;
+	margin: 0 auto;
+	width: 60%;
+	
+}
+
+#consoleMessage {
+	color: red;
+}
+
+h3 {
+
+font-family: 'Economica', sans-serif;
+text-align: center;
+
+}
+
+input {
+
+border: 0px; 
+padding: 10px; 
+
+
+-webkit-transition: background-color .15s ease-out;
+-moz-transition: background-color .15s ease-out;
+-o-transition: background-color .15s ease-out;
+transition: background-color .15s ease-out;
+
+}
+
+input:focus {
+background-color: #001A33;
+outline:none;
+color:red;
+}
+
+#usersonline {
+	width: 20%;
+	margin: 0 auto;
+	background-color: black;
+	color: white;
+}
+
+#currentlyonline {
+		list-style:none;
+	word-wrap : break-word;
+	padding: 5px;
+	margin: 0;
+}
+
+
+#usersonline:hover {
+background-color:#001A33;
+color:red;
+-webkit-transition: background-color .15s ease-out;
+-moz-transition: background-color .15s ease-out;
+-o-transition: background-color .15s ease-out;
+transition: background-color .15s ease-out;
+
+}
+
+#lob {
+	list-style:none;
+	width: 20%;
+	margin: 0 auto;
+	background-color: black;
+	color: white;
+
+}
+
+#lob:hover {
+background-color:#001A33;
+color:red;
+-webkit-transition: background-color .15s ease-out;
+-moz-transition: background-color .15s ease-out;
+-o-transition: background-color .15s ease-out;
+transition: background-color .15s ease-out;	
+}
+
+#joinLobby {
+	background-color: #001A33;
+	color: red;
+	padding: 20px;
+	border:none;
+}
+
+#leaveLobby {
+	background-color: #001A33;
+	color: red;
+	padding: 20px;
+	border:none;
+}
+
+#lobbyRoom {
+	list-style:none;
+	word-wrap: break-word;
+}
+
+#readyButton {
+	background-color: #001A33;
+	color: red;
+	padding: 20px;
+	border: 1px solid red;
+}
+
+#unreadyButton {
+	background-color: #001A33;
+	color: red;
+	padding: 20px;
+	border: 1px solid red;
+}
+
+#startGame {
+	background-color: #001A33;
+	color: red;
+	padding: 20px;
+	border: 1px solid green;
+}
+
+#redTurnButton {
+	background-color: #001A33;
+	color: red;
+	padding: 20px;
+	border: 1px solid yellow;
+
+}
+
+
+#blueTurnButton {
+	background-color: #001A33;
+	color: red;
+	padding: 20px;
+	border: 1px solid yellow;
+}
+
+#initButton {
+	background-color: #001A33;
+	color: red;
+	padding: 20px;
+	border: 1px solid yellow;
+}
+
+#forfeitButton {
+	background-color: #001A33;
+	color: red;
+	padding: 20px;
+	border: 1px solid orange;
+}
+
+#endTurnButton {
+	background-color: #001A33;
+	color: red;
+	padding: 20px;
+	border: 1px solid black;	
+}
+
+#finishGameButton {
+	background-color: #001A33;
+	color: red;
+	padding: 20px;
+	border: 1px solid green;
+}
+/*red*/
