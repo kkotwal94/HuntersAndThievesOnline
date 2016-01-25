@@ -1,13 +1,19 @@
 # Hunters and Thieves
 How to play:
  
-Once two players have chosen a nickname, joined a lobby, readied up, then hit the start button the initial phase begins where each player may maneuver their units around the board to the starting positions of their choosing. Each player must also hide their gold somewhere on their side of the board. When both players are done setting their pieces the game begins. The game is turn based and turns are spent either moving a piece, placing a mine, or killing an enemy. One action per turn until one person reaches a win condition listed below.  
+    Once two players have chosen a nickname, joined a lobby, readied up, then hit the start button
+    the initial phase begins where each player may maneuver their units around the board to the 
+    starting positions of their choosing. Each player must also hide their gold somewhere on their
+    side of the board. When both players are done setting their pieces the game begins. The game is
+    turn based and turns are spent either moving a piece, placing a mine, or killing an enemy. One 
+    action per turn until one person reaches a win condition listed below.  
 _______________________________________________________________________________________________________________________________________
 
 Win the game in one of two ways:
 
-1. Being the first team to use their units (minus decoy units described below) to locate and capture the enemy gold 
-2. Being the first team to eliminating the opposing team.
+    1. Being the first team to use their units (minus decoy units described below) to locate and 
+       capture the enemy gold 
+    2. Being the first team to eliminating the opposing team.
 _______________________________________________________________________________________________________________________________________
  
 Characters and Movement:
