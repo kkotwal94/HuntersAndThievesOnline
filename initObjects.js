@@ -17,11 +17,11 @@ var redPawn2 = new Hero("RedPawn2", "Pawn", '(1,1)', 'Red');
 var redPawn3 = new Hero("RedPawn3", "Pawn", '(2,1)', 'Red');
 var redPawn4 = new Hero("RedPawn4", "Pawn", '(3,1)', 'Red');
 var redPawn5 = new Hero("RedPawn5", "Pawn", '(4,1)', 'Red');
-var redMine1 = new Mine("RedMine1", "Mine", false, "Red");
-var redMine2 = new Mine("RedMine2", "Mine", false, "Red");
-var redMine3 = new Mine("RedMine3", "Mine", false, "Red");
-var redMine4 = new Mine("RedMine4", "Mine", false, "Red");
-var redMine5 = new Mine("RedMine5", "Mine", false, "Red");
+var redMine1 = new Mine("RedMine1", "Mine", null, "Red");
+var redMine2 = new Mine("RedMine2", "Mine", null, "Red");
+var redMine3 = new Mine("RedMine3", "Mine", null, "Red");
+var redMine4 = new Mine("RedMine4", "Mine", null, "Red");
+var redMine5 = new Mine("RedMine5", "Mine", null, "Red");
 
 var redGold = new Gold("RedGold");
 
@@ -38,11 +38,11 @@ var bluePawn3 = new Hero("BluePawn3", "Pawn", '(2,8)', 'Blue');
 var bluePawn4 = new Hero("BluePawn4", "Pawn", '(3,8)', 'Blue');
 var bluePawn5 = new Hero("BluePawn5", "Pawn", '(4,8)', 'Blue');
 
-var blueMine1 = new Mine("BlueMine1", "Mine", false, "Blue");
-var blueMine2 = new Mine("BlueMine2", "Mine", false, "Blue");
-var blueMine3 = new Mine("BlueMine3", "Mine", false, "Blue");
-var blueMine4 = new Mine("BlueMine4", "Mine", false, "Blue");
-var blueMine5 = new Mine("BlueMine5", "Mine", false, "Blue");
+var blueMine1 = new Mine("BlueMine1", "Mine", null, "Blue");
+var blueMine2 = new Mine("BlueMine2", "Mine", null, "Blue");
+var blueMine3 = new Mine("BlueMine3", "Mine", null, "Blue");
+var blueMine4 = new Mine("BlueMine4", "Mine", null, "Blue");
+var blueMine5 = new Mine("BlueMine5", "Mine", null, "Blue");
 
 var blueGold = new Gold("BlueGold");
 

@@ -833,35 +833,311 @@ var movementLogic = function() {
         }   
         else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && gameGrid.grid[currentSelectedTile].playerType == "Thief"){ //thief making kill
             thiefDeselect(currentSelectedTile);
+            console.log(gameGrid.grid[this.id]);
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn1") {
+                redPawn1.setDead();
+                redPawn1.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn2") {
+                redPawn2.setDead();
+                redPawn2.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn3") {
+                redPawn3.setDead();
+                redPawn3.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn4") {
+                redPawn4.setDead();
+                redPawn4.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn5") {
+                redPawn5.setDead();
+                redPawn5.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn1") {
+                bluePawn1.setDead();
+                bluePawn1.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn2") {
+                bluePawn2.setDead();
+                bluePawn2.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn3") {
+                bluePawn3.setDead();
+                bluePawn3.emitDead(gameGrid.grid);
+            }
+           if(gameGrid.grid[this.id].playerNickName == "BluePawn4") {
+                bluePawn4.setDead();
+                bluePawn4.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn5") {
+                bluePawn5.setDead();
+                bluePawn5.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "BlueThief") {
+                blueThief.setDead();
+                blueThief.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "RedThief") {
+                redThief.setDead();
+                redThief.emitDead(gameGrid.grid);
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "RedHunter") {
+                redHunter.setDead();
+                redHunter.emitDead(gameGrid.grid);
+                console.log("just hit the redhunter and am setting him dead");
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "BlueHunter") {
+                blueHunter.setDead();
+                blueHunter.emitDead(gameGrid.grid);
+                console.log("just hit the redhunter and am setting him dead");
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "BlueThiefDecoy") {
+                blueThiefDecoy.setDead();
+                blueThiefDecoy.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "RedThiefDecoy") {
+                redThiefDecoy.setDead();
+                redThiefDecoy.emitDead(gameGrid.grid);
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "RedHunterDecoy") {
+                redHunterDecoy.setDead();
+                redHunterDecoy.emitDead(gameGrid.grid);
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "BlueHunterDecoy") {
+                blueHunterDecoy.setDead();
+                blueHunterDecoy.emitDead(gameGrid.grid);
+            }
+            
             document.getElementById(currentSelectedTile).classList.toggle("selectedT");
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BlueHunter") {
+                blueHunter.updateLocation(this.id, gameGrid.grid);
+            }
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedHunter") {
+                redHunter.updateLocation(this.id, gameGrid.grid);
+            }
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BlueThief") {
+                blueThief.updateLocation(this.id, gameGrid.grid);
+            }
+            
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedThief") {
+                redThief.updateLocation(this.id, gameGrid.grid);
+            }
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn1") {
+                redPawn1.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn2") {
+                redPawn2.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn3") {
+                redPawn3.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn4") {
+                redPawn4.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn5") {
+                redPawn5.updateLocation(this.id, gameGrid.grid);
+            }
+
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn1") {
+                bluePawn1.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn2") {
+                bluePawn2.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn3") {
+                bluePawn3.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn4") {
+                bluePawn4.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn5") {
+                bluePawn5.updateLocation(this.id, gameGrid.grid);
+            }
+            /*
             document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
             document.getElementById(this.id).classList.toggle("has"+gameGrid.grid[this.id].playerTeam+gameGrid.grid[this.id].playerType);
             document.getElementById(this.id).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
             gameGrid.grid[this.id].hasPlayer = true;
             gameGrid.grid[this.id].playerType = "Thief";
             gameGrid.grid[this.id].playerTeam = gameGrid.grid[currentSelectedTile].playerTeam;
+*/
             gameGrid.grid[currentSelectedTile].playerTeam = null;
             gameGrid.grid[currentSelectedTile].playerType = null;
             gameGrid.grid[currentSelectedTile].hasPlayer = false;
+            
             currentValidMoveLocations = [];
             if(isInit == false){
              makingMove = makingMove + 1;
             }
             currentSelectedTile = null;
             isSelected = false; 
+            console.log("Thief killed another player!");
         }
         else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && gameGrid.grid[currentSelectedTile].playerType == "Hunter"){ //hunter making kill
             hunterDeselect(currentSelectedTile);
+            console.log(gameGrid.grid[this.id]);
+            console.log(gameGrid.grid[currentSelectedTile]);
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn1") {
+                redPawn1.setDead();
+                redPawn1.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn2") {
+                redPawn2.setDead();
+                redPawn2.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn3") {
+                redPawn3.setDead();
+                redPawn3.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn4") {
+                redPawn4.setDead();
+                redPawn4.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn5") {
+                redPawn5.setDead();
+                redPawn5.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn1") {
+                bluePawn1.setDead();
+                bluePawn1.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn2") {
+                bluePawn2.setDead();
+                bluePawn2.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn3") {
+                bluePawn3.setDead();
+                bluePawn3.emitDead(gameGrid.grid);
+            }
+           if(gameGrid.grid[this.id].playerNickName == "BluePawn4") {
+                bluePawn4.setDead();
+                bluePawn4.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn5") {
+                bluePawn5.setDead();
+                bluePawn5.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "BlueThief") {
+                blueThief.setDead();
+                blueThief.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "RedThief") {
+                redThief.setDead();
+                redThief.emitDead(gameGrid.grid);
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "RedHunter") {
+                redHunter.setDead();
+                redHunter.emitDead(gameGrid.grid);
+                console.log("just hit the redhunter and am setting him dead");
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "BlueHunter") {
+                blueHunter.setDead();
+                blueHunter.emitDead(gameGrid.grid);
+                console.log("just hit the redhunter and am setting him dead");
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "BlueThiefDecoy") {
+                blueThiefDecoy.setDead();
+                blueThiefDecoy.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "RedThiefDecoy") {
+                redThiefDecoy.setDead();
+                redThiefDecoy.emitDead(gameGrid.grid);
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "RedHunterDecoy") {
+                redHunterDecoy.setDead();
+                redHunterDecoy.emitDead(gameGrid.grid);
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "BlueHunterDecoy") {
+                blueHunterDecoy.setDead();
+                blueHunterDecoy.emitDead(gameGrid.grid);
+            }
+            
             document.getElementById(currentSelectedTile).classList.toggle("selectedH");
-            document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
-            document.getElementById(this.id).classList.toggle("has"+gameGrid.grid[this.id].playerTeam+gameGrid.grid[this.id].playerType);
-            document.getElementById(this.id).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
-            gameGrid.grid[this.id].hasPlayer = true;
-            gameGrid.grid[this.id].playerType = "Hunter";
-            gameGrid.grid[this.id].playerTeam = gameGrid.grid[currentSelectedTile].playerTeam;
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BlueHunter") {
+                blueHunter.updateLocation(this.id, gameGrid.grid);
+            }
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedHunter") {
+                redHunter.updateLocation(this.id, gameGrid.grid);
+            }
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BlueThief") {
+                blueThief.updateLocation(this.id, gameGrid.grid);
+            }
+            
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedThief") {
+                redThief.updateLocation(this.id, gameGrid.grid);
+            }
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn1") {
+                redPawn1.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn2") {
+                redPawn2.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn3") {
+                redPawn3.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn4") {
+                redPawn4.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn5") {
+                redPawn5.updateLocation(this.id, gameGrid.grid);
+            }
+
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn1") {
+                bluePawn1.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn2") {
+                bluePawn2.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn3") {
+                bluePawn3.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn4") {
+                bluePawn4.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn5") {
+                bluePawn5.updateLocation(this.id, gameGrid.grid);
+            }
+
+
+
+            //document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
+            //document.getElementById(this.id).classList.toggle("has"+gameGrid.grid[this.id].playerTeam+gameGrid.grid[this.id].playerType);
+            //document.getElementById(this.id).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
+            //gameGrid.grid[this.id].hasPlayer = true;
+            //gameGrid.grid[this.id].playerType = "Hunter";
+            //gameGrid.grid[this.id].playerTeam = gameGrid.grid[currentSelectedTile].playerTeam;
+            //gameGrid.grid[this.id].playerNickName = gameGrid.grid[currentSelectedTile].playerNickName;
             gameGrid.grid[currentSelectedTile].playerTeam = null;
             gameGrid.grid[currentSelectedTile].playerType = null;
             gameGrid.grid[currentSelectedTile].hasPlayer = false;
+
             currentValidMoveLocations = [];
             if(isInit == false){
              makingMove = makingMove + 1;
@@ -870,31 +1146,169 @@ var movementLogic = function() {
             isSelected = false; 
             //toolboxWipe();
             //disableHunterToolbox();
+            console.log("Hunter killed another player!");
         }
         else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && gameGrid.grid[currentSelectedTile].playerType == "Pawn"){ //underling making kill
             underlingDeselect(currentSelectedTile);
+if(gameGrid.grid[this.id].playerNickName == "RedPawn1") {
+                redPawn1.setDead();
+                redPawn1.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn2") {
+                redPawn2.setDead();
+                redPawn2.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn3") {
+                redPawn3.setDead();
+                redPawn3.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn4") {
+                redPawn4.setDead();
+                redPawn4.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "RedPawn5") {
+                redPawn5.setDead();
+                redPawn5.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn1") {
+                bluePawn1.setDead();
+                bluePawn1.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn2") {
+                bluePawn2.setDead();
+                bluePawn2.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn3") {
+                bluePawn3.setDead();
+                bluePawn3.emitDead(gameGrid.grid);
+            }
+           if(gameGrid.grid[this.id].playerNickName == "BluePawn4") {
+                bluePawn4.setDead();
+                bluePawn4.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[this.id].playerNickName == "BluePawn5") {
+                bluePawn5.setDead();
+                bluePawn5.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "BlueThief") {
+                blueThief.setDead();
+                blueThief.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "RedThief") {
+                redThief.setDead();
+                redThief.emitDead(gameGrid.grid);
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "RedHunter") {
+                redHunter.setDead();
+                redHunter.emitDead(gameGrid.grid);
+                console.log("just hit the redhunter and am setting him dead");
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "BlueHunter") {
+                blueHunter.setDead();
+                blueHunter.emitDead(gameGrid.grid);
+                console.log("just hit the redhunter and am setting him dead");
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "BlueThiefDecoy") {
+                blueThiefDecoy.setDead();
+                blueThiefDecoy.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].playerNickName == "RedThiefDecoy") {
+                redThiefDecoy.setDead();
+                redThiefDecoy.emitDead(gameGrid.grid);
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "RedHunterDecoy") {
+                redHunterDecoy.setDead();
+                redHunterDecoy.emitDead(gameGrid.grid);
+            }
+
+             if(gameGrid.grid[this.id].playerNickName == "BlueHunterDecoy") {
+                blueHunterDecoy.setDead();
+                blueHunterDecoy.emitDead(gameGrid.grid);
+            }
+            
             document.getElementById(currentSelectedTile).classList.toggle("selectedU");
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BlueHunter") {
+                blueHunter.updateLocation(this.id, gameGrid.grid);
+            }
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedHunter") {
+                redHunter.updateLocation(this.id, gameGrid.grid);
+            }
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BlueThief") {
+                blueThief.updateLocation(this.id, gameGrid.grid);
+            }
+            
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedThief") {
+                redThief.updateLocation(this.id, gameGrid.grid);
+            }
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn1") {
+                redPawn1.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn2") {
+                redPawn2.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn3") {
+                redPawn3.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn4") {
+                redPawn4.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn5") {
+                redPawn5.updateLocation(this.id, gameGrid.grid);
+            }
+
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn1") {
+                bluePawn1.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn2") {
+                bluePawn2.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn3") {
+                bluePawn3.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn4") {
+                bluePawn4.updateLocation(this.id, gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn5") {
+                bluePawn5.updateLocation(this.id, gameGrid.grid);
+            }
+            //document.getElementById(currentSelectedTile).classList.toggle("selectedU");
+            /*
             document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
             document.getElementById(this.id).classList.toggle("has"+gameGrid.grid[this.id].playerTeam+gameGrid.grid[this.id].playerType);
             document.getElementById(this.id).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
             gameGrid.grid[this.id].hasPlayer = true;
             gameGrid.grid[this.id].playerType = "Pawn";
             gameGrid.grid[this.id].playerTeam = gameGrid.grid[currentSelectedTile].playerTeam;
+            */
             gameGrid.grid[currentSelectedTile].playerTeam = null;
             gameGrid.grid[currentSelectedTile].playerType = null;
             gameGrid.grid[currentSelectedTile].hasPlayer = false;
+            
             currentValidMoveLocations = [];
             if(isInit == false){
              makingMove = makingMove + 1;
             }
             currentSelectedTile = null;
             isSelected = false; 
+            console.log("Underling killed another player!");
         }
-           
+          
         }
     if(gameGrid.grid[this.id].hasPlayer == false){ //making moves and mine interaction
      
-        if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && this.classList.contains("hasGoldInvis") && gameGrid.grid[currentSelectedTile].playerType == "Thief"){ //thief finding enemy gold
+        if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && gameGrid.grid[this.id].gold.active == true && gameGrid.grid[currentSelectedTile].playerType == "Thief"){ //thief finding enemy gold
             thiefDeselect(currentSelectedTile);
             document.getElementById(currentSelectedTile).classList.toggle("selectedT");
             document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
@@ -913,9 +1327,11 @@ var movementLogic = function() {
             }
             currentSelectedTile = null;
             isSelected = false;
+            hasWon = true;
             alert("Thief found the gold, you win!");
+            socket.emit('haswon', clientNickName);
         }
-        else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && this.classList.contains("hasGoldInvis") && gameGrid.grid[currentSelectedTile].playerType == "Hunter"){ //hunter finding enemy gold
+        else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && gameGrid.grid[this.id].gold.active == true && gameGrid.grid[currentSelectedTile].playerType == "Hunter"){ //hunter finding enemy gold
             hunterDeselect(currentSelectedTile);
             document.getElementById(currentSelectedTile).classList.toggle("selectedH");
             document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);      
@@ -935,9 +1351,11 @@ var movementLogic = function() {
             currentSelectedTile = null;
             isSelected = false; 
             disableHunterToolbox();
+            hasWon = true;
             alert("Hunter found the gold, you win!");
+            socket.emit('haswon', clientNickName);
         }
-        else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && this.classList.contains("hasGoldInvis") && gameGrid.grid[currentSelectedTile].playerType == "Pawn"){ //underling finding enemy gold
+        else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && gameGrid.grid[this.id].gold.active == true && gameGrid.grid[currentSelectedTile].playerType == "Pawn"){ //underling finding enemy gold
             underlingDeselect(currentSelectedTile);
             document.getElementById(currentSelectedTile).classList.toggle("selectedU");
             document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);         
@@ -956,58 +1374,254 @@ var movementLogic = function() {
             }
             currentSelectedTile = null;
             isSelected = false;
+            hasWon = true;
             alert("Underling found the gold, you win!");
+            socket.emit('haswon', clientNickName);
         } 
-        else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && gameGrid.grid[this.id].trap == true && gameGrid.grid[currentSelectedTile].playerType == "Thief"){ //thief hitting enemy mine
+        else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (myPlayer != gameGrid.grid[this.id].trap.type) && gameGrid.grid[this.id].trap.active == true && gameGrid.grid[currentSelectedTile].playerType == "Thief"){ //thief hitting enemy mine
             thiefDeselect(currentSelectedTile);
             document.getElementById(currentSelectedTile).classList.toggle("selectedT");
-            document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
+            //document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BlueThief") {
+                blueThief.setDead();
+                blueThief.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedThief") {
+                redThief.setDead();
+                redThief.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine1") {
+                blueMine1.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine2") {
+                blueMine2.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine3") {
+                blueMine3.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine4") {
+                blueMine4.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine5") {
+                blueMine5.defuse(gameGrid.grid);
+            }
+
+
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine1") {
+                redMine1.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine2") {
+                redMine2.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine3") {
+                redMine3.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine4") {
+                redMine4.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine5") {
+                redMine5.defuse(gameGrid.grid);
+            }
+            
             gameGrid.grid[this.id].trap = false;
             gameGrid.grid[this.id].hasPlayer = false;
             gameGrid.grid[this.id].playerType = "null";
             gameGrid.grid[this.id].playerTeam = "null";
+            
             gameGrid.grid[currentSelectedTile].playerTeam = null;
             gameGrid.grid[currentSelectedTile].playerType = null;
             gameGrid.grid[currentSelectedTile].hasPlayer = false;
+            
             currentValidMoveLocations = [];
             if(isInit == false){
              makingMove = makingMove + 1;
             }
             currentSelectedTile = null;
             isSelected = false; 
-            alert("Thief hit a mine!");
+            alert("Thief hit a mine and died!");
         }
-        else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && gameGrid.grid[this.id].trap == true && gameGrid.grid[currentSelectedTile].playerType == "Hunter"){ //hunter hitting enemy mine
+        else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (myPlayer != gameGrid.grid[this.id].trap.type) && gameGrid.grid[this.id].trap.active == true && gameGrid.grid[currentSelectedTile].playerType == "Hunter"){ //hunter hitting enemy mine
             hunterDeselect(currentSelectedTile);
             document.getElementById(currentSelectedTile).classList.toggle("selectedH");
-            document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
+            //document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedHunter") {
+                redHunter.setDead();
+                redHunter.emitDead(gameGrid.grid);
+            }
+
+             if(gameGrid.grid[currentSelectedTile].playerNickName == "BlueHunter") {
+                blueHunter.setDead();
+                blueHunter.emitDead(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine1") {
+                blueMine1.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine2") {
+                blueMine2.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine3") {
+                blueMine3.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine4") {
+                blueMine4.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine5") {
+                blueMine5.defuse(gameGrid.grid);
+            }
+
+
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine1") {
+                redMine1.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine2") {
+                redMine2.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine3") {
+                redMine3.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine4") {
+                redMine4.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine5") {
+                redMine5.defuse(gameGrid.grid);
+            }
+
+            
             gameGrid.grid[this.id].trap = false;
             gameGrid.grid[this.id].hasPlayer = false;
             gameGrid.grid[this.id].playerType = "null";
             gameGrid.grid[this.id].playerTeam = "null";
+            
             gameGrid.grid[currentSelectedTile].playerTeam = null;
             gameGrid.grid[currentSelectedTile].playerType = null;
             gameGrid.grid[currentSelectedTile].hasPlayer = false;
+            
             currentValidMoveLocations = [];
             if(isInit == false){
              makingMove = makingMove + 1;
             }
             currentSelectedTile = null;
             isSelected = false; 
-            disableHunterToolbox();
+            //disableHunterToolbox(); //hunter dies with your mines thats rough m8
             alert("Hunter hit a mine!");
         }
-        else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (gameGrid.grid[this.id].playerTeam != gameGrid.grid[currentSelectedTile].playerTeam) && gameGrid.grid[this.id].trap == true && gameGrid.grid[currentSelectedTile].playerType == "Pawn"){ //underling hitting enemy mine
+        else if(isSelected == true && (currentValidMoveLocations.indexOf(this.id) > -1) && (myPlayer != gameGrid.grid[this.id].trap.type) && gameGrid.grid[this.id].trap.active == true && gameGrid.grid[currentSelectedTile].playerType == "Pawn"){ //underling hitting enemy mine
             underlingDeselect(currentSelectedTile);
             document.getElementById(currentSelectedTile).classList.toggle("selectedU");
-            document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
+            //document.getElementById(currentSelectedTile).classList.toggle("has"+gameGrid.grid[currentSelectedTile].playerTeam+gameGrid.grid[currentSelectedTile].playerType);
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn1") {
+                redPawn1.setDead();
+                redPawn1.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn2") {
+                redPawn2.setDead();
+                redPawn2.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn3") {
+                redPawn3.setDead();
+                redPawn3.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn4") {
+                redPawn4.setDead();
+                redPawn4.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "RedPawn5") {
+                redPawn5.setDead();
+                redPawn5.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn1") {
+                bluePawn1.setDead();
+                bluePawn1.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn2") {
+                bluePawn2.setDead();
+                bluePawn2.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn3") {
+                bluePawn3.setDead();
+                bluePawn3.emitDead(gameGrid.grid);
+            }
+           if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn4") {
+                bluePawn4.setDead();
+                bluePawn4.emitDead(gameGrid.grid);
+            }
+            if(gameGrid.grid[currentSelectedTile].playerNickName == "BluePawn5") {
+                bluePawn5.setDead();
+                bluePawn5.emitDead(gameGrid.grid);
+            }
+
+             if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine1") {
+                blueMine1.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine2") {
+                blueMine2.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine3") {
+                blueMine3.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine4") {
+                blueMine4.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "BlueMine5") {
+                blueMine5.defuse(gameGrid.grid);
+            }
+
+
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine1") {
+                redMine1.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine2") {
+                redMine2.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine3") {
+                redMine3.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine4") {
+                redMine4.defuse(gameGrid.grid);
+            }
+
+            if(gameGrid.grid[this.id].trap.type != myPlayer && gameGrid.grid[this.id].trap.name == "RedMine5") {
+                redMine5.defuse(gameGrid.grid);
+            }
+            
             gameGrid.grid[this.id].trap = false;
             gameGrid.grid[this.id].hasPlayer = false;
             gameGrid.grid[this.id].playerType = "null";
             gameGrid.grid[this.id].playerTeam = "null";
+            
             gameGrid.grid[currentSelectedTile].playerTeam = null;
             gameGrid.grid[currentSelectedTile].playerType = null;
             gameGrid.grid[currentSelectedTile].hasPlayer = false;
+            
             currentValidMoveLocations = [];
             if(isInit == false){
              makingMove = makingMove + 1;
@@ -1338,12 +1952,22 @@ var placeMineInGrid = function(ev) {
         console.log(blueMine5.location);
         makingMove = makingMove + 1;
     }
-    document.getElementById("mine1").setAttribute("draggable", "false");
-    document.getElementById("mine2").setAttribute("draggable", "false");
-    document.getElementById("mine3").setAttribute("draggable", "false");
-    document.getElementById("mine4").setAttribute("draggable", "false");
-    document.getElementById("mine5").setAttribute("draggable", "false");
-    document.getElementById("gold").setAttribute("draggable", "false");
+    if(document.getElementById('mine1') !=null){
+        document.getElementById("mine1").setAttribute("draggable", "false");
+        }
+        if(document.getElementById('mine2') !=null){
+        document.getElementById("mine2").setAttribute("draggable", "false");
+        }
+        if(document.getElementById("mine3")!=null){
+        document.getElementById("mine3").setAttribute("draggable", "false");
+        }
+
+        if(document.getElementById("mine4")!=null){
+        document.getElementById("mine4").setAttribute("draggable", "false");
+        }
+        if(document.getElementById("mine5")!=null){
+        document.getElementById("mine5").setAttribute("draggable", "false");
+        }
     document.getElementById(data).setAttribute("draggable", "true");
     }  
 }else {
@@ -1449,12 +2073,22 @@ var toolboxWipe = function(){
     document.getElementById('redhunter1').src="";
     document.getElementById('redthief1').src=""; 
     document.getElementById('bluehunter1').src="";
-    document.getElementById('bluethief1').src="";      
+    document.getElementById('bluethief1').src="";   
+    if(document.getElementById('mine1') != null) {   
     document.getElementById('mine1').src="";
+    }
+    if(document.getElementById('mine2') != null) {
     document.getElementById('mine2').src="";
+    }
+    if(document.getElementById('mine3')!= null) {
     document.getElementById('mine3').src="";
+    }
+    if(document.getElementById('mine4') != null) {
     document.getElementById('mine4').src="";
+    }
+    if(document.getElementById('mine5') != null) {
     document.getElementById('mine5').src="";
+    }
 }
 
 var cellClickListeners = function() {

@@ -117,6 +117,9 @@ var Mine = function(name, type, isActive, team) {
         this.isVisible = val;
     }
 
+    this.defuse = function() {
+        this.isActive = false;
+    }
     this.initLocation = function(grid) { //draws our init location
         this.isActive = true;
         if(this.isVisible == false){
@@ -233,14 +236,13 @@ var redPawn2 = new Hero("RedPawn2", "Pawn", '(1,1)', 'Red');
 var redPawn3 = new Hero("RedPawn3", "Pawn", '(2,1)', 'Red');
 var redPawn4 = new Hero("RedPawn4", "Pawn", '(3,1)', 'Red');
 var redPawn5 = new Hero("RedPawn5", "Pawn", '(4,1)', 'Red');
+var redMine1 = new Mine("RedMine1", "Mine", null, "Red");
+var redMine2 = new Mine("RedMine2", "Mine", null, "Red");
+var redMine3 = new Mine("RedMine3", "Mine", null, "Red");
+var redMine4 = new Mine("RedMine4", "Mine", null, "Red");
+var redMine5 = new Mine("RedMine5", "Mine", null, "Red");
 
 var redGold = new Gold("RedGold");
-
-var redMine1 = new Mine("RedMine1", "Mine", false, "Red");
-var redMine2 = new Mine("RedMine2", "Mine", false, "Red");
-var redMine3 = new Mine("RedMine3", "Mine", false, "Red");
-var redMine4 = new Mine("RedMine4", "Mine", false, "Red");
-var redMine5 = new Mine("RedMine5", "Mine", false, "Red");
 
 //Blue Team :(
 var blueThief = new Hero('BlueThief', "Thief", '(0,9)', 'Blue');
@@ -255,11 +257,11 @@ var bluePawn3 = new Hero("BluePawn3", "Pawn", '(2,8)', 'Blue');
 var bluePawn4 = new Hero("BluePawn4", "Pawn", '(3,8)', 'Blue');
 var bluePawn5 = new Hero("BluePawn5", "Pawn", '(4,8)', 'Blue');
 
-var blueMine1 = new Mine("BlueMine1", "Mine", false, "Blue");
-var blueMine2 = new Mine("BlueMine2", "Mine", false, "Blue");
-var blueMine3 = new Mine("BlueMine3", "Mine", false, "Blue");
-var blueMine4 = new Mine("BlueMine4", "Mine", false, "Blue");
-var blueMine5 = new Mine("BlueMine5", "Mine", false, "Blue");
+var blueMine1 = new Mine("BlueMine1", "Mine", null, "Blue");
+var blueMine2 = new Mine("BlueMine2", "Mine", null, "Blue");
+var blueMine3 = new Mine("BlueMine3", "Mine", null, "Blue");
+var blueMine4 = new Mine("BlueMine4", "Mine", null, "Blue");
+var blueMine5 = new Mine("BlueMine5", "Mine", null, "Blue");
 
 var blueGold = new Gold("BlueGold");
 
@@ -438,33 +440,75 @@ socket.on('unready lobby', function(name, readyStatus) {
      if(color == "Red") {
         redinit = false;
         for(var i = 0; i < data.length; i++) {
-            if(data[i].nickname == "RedThief"){
+            if(data[i].nickname == "RedThief" && data[i].alive == true){
                 redThief.updateLocation(data[i].location)
             }
+            if(data[i].nickname == "RedThief" && data[i].alive == false){
+                redThief.setDead();
+            }
 
-            if(data[i].nickname == "RedHunter"){
+            if(data[i].nickname == "RedHunter" && data[i].alive == true){
                 redHunter.updateLocation(data[i].location)
             }
-            if(data[i].nickname == "RedPawn1"){
+
+            if(data[i].nickname == "RedHunter" && data[i].alive == false){
+                redHunter.setDead();
+            }
+
+            if(data[i].nickname == "RedPawn1" && data[i].alive == true){
                 redPawn1.updateLocation(data[i].location);
             }
-            if(data[i].nickname == "RedPawn2"){
+
+            if(data[i].nickname == "RedPawn1" && data[i].alive == false){
+                redPawn1.setDead();
+            }
+            
+            if(data[i].nickname == "RedPawn2" && data[i].alive == true){
                 redPawn2.updateLocation(data[i].location);
             }
-            if(data[i].nickname == "RedPawn3"){
+
+            if(data[i].nickname == "RedPawn2" && data[i].alive == false){
+                redPawn2.setDead();
+            }
+
+            if(data[i].nickname == "RedPawn3" && data[i].alive == true){
                 redPawn3.updateLocation(data[i].location);
             }
-            if(data[i].nickname == "RedPawn4"){
+
+            if(data[i].nickname == "RedPawn3" && data[i].alive == false){
+                redPawn3.setDead();
+            }
+
+            if(data[i].nickname == "RedPawn4" && data[i].alive == true){
                 redPawn4.updateLocation(data[i].location);
             }
-            if(data[i].nickname == "RedPawn5"){
+
+            if(data[i].nickname == "RedPawn4" && data[i].alive == false){
+                redPawn4.setDead();
+            }
+
+            if(data[i].nickname == "RedPawn5" && data[i].alive == true){
                 redPawn5.updateLocation(data[i].location);
             }
-            if(data[i].nickname == "RedThiefDecoy"){
+
+            if(data[i].nickname == "RedPawn5" && data[i].alive == false){
+                redPawn5.setDead();
+            }
+
+            if(data[i].nickname == "RedThiefDecoy" && data[i].alive == true){
                 redThiefDecoy.updateLocation(data[i].location);
             }
-            if(data[i].nickname == "RedHunterDecoy"){
+
+            if(data[i].nickname == "RedThiefDecoy" && data[i].alive == false){
+                redThiefDecoy.setDead();
+            }
+
+            if(data[i].nickname == "RedHunterDecoy" && data[i].alive == true){
                 redHunterDecoy.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "RedHunterDecoy" && data[i].alive == false){
+                redHunterDecoy.setDead();
             }
             if(data[i].name == "RedMine1" && data[i].isActive == true){
                 redMine1.updateLocation(data[i].location);
@@ -483,50 +527,107 @@ socket.on('unready lobby', function(name, readyStatus) {
             if(data[i].name == "RedMine5" && data[i].isActive == true){
                 redMine5.updateLocation(data[i].location);
             }
-            if(data[i] instanceof  Gold){
+
+            if(data[i].name == "RedMine1" && data[i].isActive == false){
+                redMine1.defuse();
+                
+            }
+            if(data[i].name == "RedMine2" && data[i].isActive == false){
+                redMine2.defuse();
+
+            }
+            if(data[i].name == "RedMine3" && data[i].isActive == false){
+                redMine3.defuse();
+            }
+            if(data[i].name == "RedMine4" && data[i].isActive == false){
+                redMine4.defuse();
+            }
+            if(data[i].name == "RedMine5" && data[i].isActive == false){
+                redMine5.defuse();
+            }
+            if(data[i].gold == "RedGold"){
                 redGold.updateLocation(data[i].location);
             }
-        }
-        var data = [redThief, redHunter, redThiefDecoy, redHunterDecoy, redPawn1, redPawn2, redPawn3, redPawn4, redPawn5, redGold, redMine1, redMine2, redMine3, redMine4, redMine5];
-        io.emit('console message', "GAMECONSOLE: " + lobby[0] + ' has finished their move!');
-        io.sockets.connected[clients[lobby[1]].id].emit('endturncomplete',data, "Blue");
-    }
 
-    if(color == "Blue") {
-        blueinit = false;
-        for(var i = 0; i < data.length; i++) {
-            if(data[i].nickname == "BlueThief"){
-                blueThief.updateLocation(data[i].location)
-            }
-
-            if(data[i].nickname == "BlueHunter"){
-                blueHunter.updateLocation(data[i].location)
-            }
-            if(data[i].nickname == "BluePawn1"){
-                bluePawn1.updateLocation(data[i].location);
-            }
-            if(data[i].nickname == "BluePawn2"){
-                bluePawn2.updateLocation(data[i].location);
-            }
-            if(data[i].nickname == "BluePawn3"){
-                bluePawn3.updateLocation(data[i].location);
-            }
-            if(data[i].nickname == "BluePawn4"){
-                bluePawn4.updateLocation(data[i].location);
-            }
-            if(data[i].nickname == "BluePawn5"){
-                bluePawn5.updateLocation(data[i].location);
-            }
-            if(data[i] instanceof  Gold){
+             if(data[i].gold == "BlueGold"){
                 blueGold.updateLocation(data[i].location);
             }
 
-            if(data[i].nickname == "BlueThiefDecoy"){
+            if(data[i].nickname == "BlueThief" && data[i].alive == true){
+                blueThief.updateLocation(data[i].location)
+            }
+
+            if(data[i].nickname == "BlueThief" && data[i].alive == false){
+                blueThief.setDead();
+            }
+
+            if(data[i].nickname == "BlueHunter" && data[i].alive == true){
+                blueHunter.updateLocation(data[i].location)
+            }
+
+            if(data[i].nickname == "BlueHunter" && data[i].alive == false){
+                blueHunter.setDead();
+            }
+
+
+            if(data[i].nickname == "BluePawn1" && data[i].alive == true){
+                bluePawn1.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "BluePawn1" && data[i].alive == false){
+                bluePawn1.setDead();
+            }
+
+            if(data[i].nickname == "BluePawn2" && data[i].alive == true){
+                bluePawn2.updateLocation(data[i].location);
+            }
+
+             if(data[i].nickname == "BluePawn2" && data[i].alive == false){
+                bluePawn2.setDead();
+            }
+
+            if(data[i].nickname == "BluePawn3" && data[i].alive == true){
+                bluePawn3.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "BluePawn3" && data[i].alive == false){
+                bluePawn3.setDead();
+            }
+
+
+            if(data[i].nickname == "BluePawn4" && data[i].alive == true){
+                bluePawn4.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "BluePawn4" && data[i].alive == false){
+                bluePawn4.setDead();
+            }
+
+
+            if(data[i].nickname == "BluePawn5" && data[i].alive == true){
+                bluePawn5.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "BluePawn5" && data[i].alive == false){
+                bluePawn5.setDead();
+            }
+
+            if(data[i].nickname == "BlueThiefDecoy" && data[i].alive == true){
                 blueThiefDecoy.updateLocation(data[i].location);
             }
-            if(data[i].nickname == "BlueHunterDecoy"){
+
+            if(data[i].nickname == "BlueThiefDecoy" && data[i].alive == false){
+                blueThiefDecoy.setDead();
+            }
+            
+            if(data[i].nickname == "BlueHunterDecoy" && data[i].alive == true){
                 blueHunterDecoy.updateLocation(data[i].location);
             }
+
+            if(data[i].nickname == "BlueHunterDecoy" && data[i].alive == false){
+                blueHunterDecoy.setDead();
+            }
+
 
             if(data[i].name == "BlueMine1" && data[i].isActive == true){
                 blueMine1.updateLocation(data[i].location);
@@ -543,9 +644,251 @@ socket.on('unready lobby', function(name, readyStatus) {
             if(data[i].name == "BlueMine5" && data[i].isActive == true){
                 blueMine5.updateLocation(data[i].location);
             }
+
+            if(data[i].name == "BlueMine1" && data[i].isActive == false){
+                blueMine1.defuse();
+            }
+            if(data[i].name == "BlueMine2" && data[i].isActive == false){
+                blueMine2.defuse();
+            }
+            if(data[i].name == "BlueMine3" && data[i].isActive == false){
+                blueMine3.defuse();
+            }
+            if(data[i].name == "BlueMine4" && data[i].isActive == false){
+                blueMine4.defuse();
+            }
+            if(data[i].name == "BlueMine5" && data[i].isActive == false){
+                blueMine5.defuse();
+            }
         }
-        var data = [blueThief, blueHunter, blueThiefDecoy, blueHunterDecoy, bluePawn1, bluePawn2, bluePawn3, bluePawn4, bluePawn5, blueGold, blueMine1, blueMine2, blueMine3, blueMine4, blueMine5];
-        io.emit('console message', "GAMECONSOLE: " + lobby[1] + ' has finished their move');
+        var data = [redThief, redHunter, redThiefDecoy, redHunterDecoy, redPawn1, redPawn2, redPawn3, redPawn4, redPawn5, redGold, redMine1, redMine2, redMine3, redMine4, redMine5, blueThief, blueHunter, blueThiefDecoy, blueHunterDecoy, bluePawn1, bluePawn2, bluePawn3, bluePawn4, bluePawn5, blueMine1, blueMine2, blueMine3, blueMine4, blueMine5, redGold, blueGold];
+        io.emit('console message', "GAMECONSOLE: " + lobby[0] + ' has finished their move!');
+        io.sockets.connected[clients[lobby[1]].id].emit('endturncomplete',data, "Blue");
+        //io.sockets.connected[clients[lobby[0]].id].emit('endturncomplete',data, "Red");
+    }
+
+    if(color == "Blue") {
+        blueinit = false;
+        for(var i = 0; i < data.length; i++) {
+            if(data[i].nickname == "RedThief" && data[i].alive == true){
+                redThief.updateLocation(data[i].location)
+            }
+            if(data[i].nickname == "RedThief" && data[i].alive == false){
+                redThief.setDead();
+            }
+
+            if(data[i].nickname == "RedHunter" && data[i].alive == true){
+                redHunter.updateLocation(data[i].location)
+            }
+
+            if(data[i].nickname == "RedHunter" && data[i].alive == false){
+                redHunter.setDead();
+            }
+
+            if(data[i].nickname == "RedPawn1" && data[i].alive == true){
+                redPawn1.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "RedPawn1" && data[i].alive == false){
+                redPawn1.setDead();
+            }
+            
+            if(data[i].nickname == "RedPawn2" && data[i].alive == true){
+                redPawn2.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "RedPawn2" && data[i].alive == false){
+                redPawn2.setDead();
+            }
+
+            if(data[i].nickname == "RedPawn3" && data[i].alive == true){
+                redPawn3.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "RedPawn3" && data[i].alive == false){
+                redPawn3.setDead();
+            }
+
+            if(data[i].nickname == "RedPawn4" && data[i].alive == true){
+                redPawn4.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "RedPawn4" && data[i].alive == false){
+                redPawn4.setDead();
+            }
+
+            if(data[i].nickname == "RedPawn5" && data[i].alive == true){
+                redPawn5.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "RedPawn5" && data[i].alive == false){
+                redPawn5.setDead();
+            }
+
+            if(data[i].nickname == "RedThiefDecoy" && data[i].alive == true){
+                redThiefDecoy.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "RedThiefDecoy" && data[i].alive == false){
+                redThiefDecoy.setDead();
+            }
+
+            if(data[i].nickname == "RedHunterDecoy" && data[i].alive == true){
+                redHunterDecoy.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "RedHunterDecoy" && data[i].alive == false){
+                redHunterDecoy.setDead();
+            }
+            if(data[i].name == "RedMine1" && data[i].isActive == true){
+                redMine1.updateLocation(data[i].location);
+                
+            }
+            if(data[i].name == "RedMine2" && data[i].isActive == true){
+                redMine2.updateLocation(data[i].location);
+
+            }
+            if(data[i].name == "RedMine3" && data[i].isActive == true){
+                redMine3.updateLocation(data[i].location);
+            }
+            if(data[i].name == "RedMine4" && data[i].isActive == true){
+                redMine4.updateLocation(data[i].location);
+            }
+            if(data[i].name == "RedMine5" && data[i].isActive == true){
+                redMine5.updateLocation(data[i].location);
+            }
+
+            if(data[i].name == "RedMine1" && data[i].isActive == false){
+                redMine1.defuse();
+                
+            }
+            if(data[i].name == "RedMine2" && data[i].isActive == false){
+                redMine2.defuse();
+
+            }
+            if(data[i].name == "RedMine3" && data[i].isActive == false){
+                redMine3.defuse();
+            }
+            if(data[i].name == "RedMine4" && data[i].isActive == false){
+                redMine4.defuse();
+            }
+            if(data[i].name == "RedMine5" && data[i].isActive == false){
+                redMine5.defuse();
+            }
+            if(data[i].gold ==  "RedGold"){
+                redGold.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "BlueThief" && data[i].alive == true){
+                blueThief.updateLocation(data[i].location)
+            }
+
+            if(data[i].nickname == "BlueThief" && data[i].alive == false){
+                blueThief.setDead();
+            }
+
+            if(data[i].nickname == "BlueHunter" && data[i].alive == true){
+                blueHunter.updateLocation(data[i].location)
+            }
+
+            if(data[i].nickname == "BlueHunter" && data[i].alive == false){
+                blueHunter.setDead();
+            }
+
+
+            if(data[i].nickname == "BluePawn1" && data[i].alive == true){
+                bluePawn1.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "BluePawn1" && data[i].alive == false){
+                bluePawn1.setDead();
+            }
+
+            if(data[i].nickname == "BluePawn2" && data[i].alive == true){
+                bluePawn2.updateLocation(data[i].location);
+            }
+
+             if(data[i].nickname == "BluePawn2" && data[i].alive == false){
+                bluePawn2.setDead();
+            }
+
+            if(data[i].nickname == "BluePawn3" && data[i].alive == true){
+                bluePawn3.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "BluePawn3" && data[i].alive == false){
+                bluePawn3.setDead();
+            }
+
+
+            if(data[i].nickname == "BluePawn4" && data[i].alive == true){
+                bluePawn4.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "BluePawn4" && data[i].alive == false){
+                bluePawn4.setDead();
+            }
+
+
+            if(data[i].nickname == "BluePawn5" && data[i].alive == true){
+                bluePawn5.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "BluePawn5" && data[i].alive == false){
+                bluePawn5.setDead();
+            }
+
+            if(data[i].nickname == "BlueThiefDecoy" && data[i].alive == true){
+                blueThiefDecoy.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "BlueThiefDecoy" && data[i].alive == false){
+                blueThiefDecoy.setDead();
+            }
+            
+            if(data[i].nickname == "BlueHunterDecoy" && data[i].alive == true){
+                blueHunterDecoy.updateLocation(data[i].location);
+            }
+
+            if(data[i].nickname == "BlueHunterDecoy" && data[i].alive == false){
+                blueHunterDecoy.setDead();
+            }
+
+
+            if(data[i].name == "BlueMine1" && data[i].isActive == true){
+                blueMine1.updateLocation(data[i].location);
+            }
+            if(data[i].name == "BlueMine2" && data[i].isActive == true){
+                blueMine2.updateLocation(data[i].location);
+            }
+            if(data[i].name == "BlueMine3" && data[i].isActive == true){
+                blueMine3.updateLocation(data[i].location);
+            }
+            if(data[i].name == "BlueMine4" && data[i].isActive == true){
+                blueMine4.updateLocation(data[i].location);
+            }
+            if(data[i].name == "BlueMine5" && data[i].isActive == true){
+                blueMine5.updateLocation(data[i].location);
+            }
+
+            if(data[i].name == "BlueMine1" && data[i].isActive == false){
+                blueMine1.defuse();
+            }
+            if(data[i].name == "BlueMine2" && data[i].isActive == false){
+                blueMine2.defuse();
+            }
+            if(data[i].name == "BlueMine3" && data[i].isActive == false){
+                blueMine3.defuse();
+            }
+            if(data[i].name == "BlueMine4" && data[i].isActive == false){
+                blueMine4.defuse();
+            }
+            if(data[i].name == "BlueMine5" && data[i].isActive == false){
+                blueMine5.defuse();
+            }
+        }
+        var data = [redThief, redHunter, redThiefDecoy, redHunterDecoy, redPawn1, redPawn2, redPawn3, redPawn4, redPawn5, redGold, redMine1, redMine2, redMine3, redMine4, redMine5, blueThief, blueHunter, blueThiefDecoy, blueHunterDecoy, bluePawn1, bluePawn2, bluePawn3, bluePawn4, bluePawn5, blueMine1, blueMine2, blueMine3, blueMine4, blueMine5, redGold, blueGold];
+        io.emit('console message', "GAMECONSOLE: " + lobby[1] + ' has finished their move!');
         io.sockets.connected[clients[lobby[0]].id].emit('endturncomplete',data, "Red");
     }
 
@@ -751,6 +1094,36 @@ socket.on('unready lobby', function(name, readyStatus) {
     io.emit("get currentboard", data);
     io.emit('reset boardvar');
   });
+
+
+socket.on('haswon', function(name) {
+    ready[lobby[0]].isReady = false;
+    ready[lobby[1]].isReady = false;
+    
+    for(var user in ready){
+            user.isReady = false;
+        }
+
+    io.emit('console message', "GAMECONSOLE: " + name + " has found the gold and won!");
+
+    lobby = [];
+
+    io.emit('reset ui');
+    io.emit('lobby status', true);
+
+
+   resetBoard();
+
+    
+
+    io.emit('show lobbymembers', lobby);
+    io.emit('lobby status', true);
+    var data = [blueThief, blueHunter, blueThiefDecoy, blueHunterDecoy, bluePawn1, bluePawn2, bluePawn3, bluePawn4, bluePawn5, blueGold, redThief, redHunter, redThiefDecoy, redHunterDecoy, redPawn1, redPawn2, redPawn3, redPawn4, redPawn5, redGold];
+
+    io.emit("get currentboard", data);
+    io.emit('reset boardvar');
+
+    });
 
   socket.on('switchTurn', function(name, color) {
     if(lobby[0] == name) {

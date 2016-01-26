@@ -60,6 +60,73 @@ var Hero = function(name, type, location, team) {
         this.nickname = name;
     }
 
+    this.emitDead = function(grid) {
+        if(this.alive == false) {
+            //grid[this.location].hasPlayer = false;
+            //grid[this.location].playerType = null;
+            //grid[this.location].playerTeam = null;
+            //grid[this.location].playerNickName = null;
+            //this.alive = "OmegaDead";
+
+        if(this.type=="Hunter" && this.team=="Red") {
+            if(document.getElementById(this.location).classList.contains('hasRedHunter')){
+            document.getElementById(this.location).classList.toggle('hasRedHunter');
+        }
+        }
+
+        if(this.type=="Hunter" && this.team=="Blue") {
+            if(document.getElementById(this.location).classList.contains('hasBlueHunter')){
+            document.getElementById(this.location).classList.toggle('hasBlueHunter');
+        }
+        }
+
+        if(this.type=="Thief" && this.team=="Red") {
+            if(document.getElementById(this.location).classList.contains('hasRedThief')){
+            document.getElementById(this.location).classList.toggle('hasRedThief');
+        }
+        }
+
+        if(this.type=="Thief" && this.team=="Blue") {
+            if(document.getElementById(this.location).classList.contains('hasBlueThief')){
+            document.getElementById(this.location).classList.toggle('hasBlueThief');
+        }
+        }
+
+        if(this.type=="DecoyHunter" && this.team=="Red") {
+            if(document.getElementById(this.location).classList.contains('hasDecoyRedHunter')){
+            document.getElementById(this.location).classList.toggle('hasDecoyRedHunter');
+        }}
+
+        if(this.type=="DecoyHunter" && this.team=="Blue") {
+            if(document.getElementById(this.location).classList.contains('hasDecoyBlueHunter')){
+            document.getElementById(this.location).classList.toggle('hasDecoyBlueHunter');
+        }
+        }
+
+        if(this.type=="DecoyThief" && this.team=="Red") {
+            if(document.getElementById(this.location).classList.contains('hasDecoyRedThief')){
+            document.getElementById(this.location).classList.toggle('hasDecoyRedThief');
+        }
+        }
+
+        if(this.type=="DecoyThief" && this.team=="Blue") {
+            if(document.getElementById(this.location).classList.contains('hasDecoyBlueThief')){
+            document.getElementById(this.location).classList.toggle('hasDecoyBlueThief');
+        }
+        }
+
+        if(this.type=="Pawn" && this.team=="Red") {
+            if(document.getElementById(this.location).classList.contains('hasRedPawn')){
+            document.getElementById(this.location).classList.toggle('hasRedPawn');
+        }
+        }
+        if(this.type=="Pawn" && this.team=="Blue") {
+            if(document.getElementById(this.location).classList.contains('hasBluePawn')){
+            document.getElementById(this.location).classList.toggle('hasBluePawn');
+        }
+        }
+    }
+}
     this.initLocation = function(grid) {
         grid[this.location].hasPlayer = true;
         grid[this.location].playerType = this.type;
@@ -247,11 +314,13 @@ var Gold = function(type) {
             this.location = location;
         } else {
             if(location == null) {
+                if(grid!=undefined){
                 grid[this.location].gold.active = false;
                 grid[this.location].gold.type = null;
                 if(document.getElementById(this.location).classList.contains("hasGold")) {
                     document.getElementById(this.location).classList.toggle("hasGold");  
                 }
+            }
             } else {
 
             if(this.location == null) {
@@ -304,12 +373,92 @@ var Mine = function(name, type, isActive, team) {
             document.getElementById(this.location).classList.toggle("hasMine");
             }
         }
+
+        if(val == false) {
+            if(document.getElementById(this.location).classList.contains("hasMine")){
+            document.getElementById(this.location).classList.toggle("hasMine");
+            }
+
+        }
+    }
+
+    this.defuse = function(grid) {
+        this.isActive = false;
+        /*
+        grid[this.location].trap.active = false;
+        grid[this.location].trap.type = null;
+        grid[this.location].trap.name = null;
+        */
+        if(this.name == "BlueMine1" || this.name == "RedMine1") {
+            if(document.getElementById(this.location).classList.contains("hasMine")) {
+                document.getElementById(this.location).classList.toggle("hasMine");
+            } else {
+                if(document.getElementById("mine1") != null) {
+                var image = document.getElementById("mine1");
+                image.parentNode.removeChild(image);
+            }
+            }
+        }
+
+
+        if(this.name == "BlueMine2" || this.name == "RedMine2") {
+            if(document.getElementById(this.location).classList.contains("hasMine")) {
+                document.getElementById(this.location).classList.toggle("hasMine");
+            } else {
+                if(document.getElementById("mine2") != null) {
+                var image = document.getElementById("mine2");
+                image.parentNode.removeChild(image);
+            }
+            }
+        }
+
+
+        if(this.name == "BlueMine3" || this.name == "RedMine3") {
+            if(document.getElementById(this.location).classList.contains("hasMine")) {
+                document.getElementById(this.location).classList.toggle("hasMine");
+            } else {
+                if(document.getElementById("mine3") != null) {
+                var image = document.getElementById("mine3");
+                image.parentNode.removeChild(image);
+            }
+            }
+        }
+
+        if(this.name == "BlueMine4" || this.name == "RedMine4") {
+            if(document.getElementById(this.location).classList.contains("hasMine")) {
+                document.getElementById(this.location).classList.toggle("hasMine");
+            } else {
+                if(document.getElementById("mine4") != null) {
+                var image = document.getElementById("mine4");
+                image.parentNode.removeChild(image);
+            }
+            }
+        }
+
+
+        if(this.name == "BlueMine5" || this.name == "RedMine5") {
+            if(document.getElementById(this.location).classList.contains("hasMine")) {
+                document.getElementById(this.location).classList.toggle("hasMine");
+            } else {
+                if(document.getElementById("mine5") != null) {
+                var image = document.getElementById("mine5");
+                image.parentNode.removeChild(image);
+            }
+            }
+        }
+
+
+
+    }
+    this.emitDefuse = function(grid) {
+        //remove img inside td here...
     }
 
     this.initLocation = function(grid) { //draws our init location
         this.isActive = true;
         grid[this.location].trap.active = true;
         grid[this.location].trap.type = this.team;
+        grid[this.location].trap.name = this.name;
         console.log(grid[this.location].trap.active);
         if(this.isVisible == false){
                 //document.getElementById(this.location).classList.toggle("hasMine");
@@ -326,6 +475,7 @@ var Mine = function(name, type, isActive, team) {
             if(location == null) {
                 grid[this.location].trap.active = false;
                 grid[this.location].trap.type = null;
+                grid[this.location].trap.name = null;
                 if(document.getElementById(this.location).classList.contains("hasMine")) {
                     document.getElementById(this.location).classList.toggle("hasMine");  
                 }
@@ -336,17 +486,20 @@ var Mine = function(name, type, isActive, team) {
                  this.location = location;
                  grid[this.location].trap.active = true;
                  grid[this.location].trap.type = this.team;
+                 grid[this.location].trap.name = this.name;
                  console.log(grid[this.location].trap.active);
             }
             else {
             this.hasMoved = true;
             grid[this.location].trap.active = false;
+            grid[this.location].trap.name = null;
             console.log("Grid location before: " + grid[this.location].trap.active);
             grid[this.location].trap.type = null;
             this.location = location;
             grid[this.location].trap.active = true;
             console.log("Grid location after: " + grid[this.location].trap.active);
             grid[this.location].trap.type = this.team;
+            grid[this.location].trap.name = this.name;
             this.isActive = true;
                     if(this.isVisible == false){
                 //document.getElementById(this.location).classList.toggle("hasMine");
@@ -459,7 +612,7 @@ var Grid = function(size) {
             } else {
                 color = "Blue";
             }
-            var newObj={locationY: i, locationX: j, trap: {type:null, active:false}, gold: {type:null, active: false}, hasPlayer: false, playerType: null, playerTeam:null, playerNickName: null, cellColor: color}; //create a new key/dictionary value for each cell/tile in our table into our grid obj, which will keep track of what exists in each cell
+            var newObj={locationY: i, locationX: j, trap: {name: null, type:null, active:false}, gold: {type:null, active: false}, hasPlayer: false, playerType: null, playerTeam:null, playerNickName: null, cellColor: color}; //create a new key/dictionary value for each cell/tile in our table into our grid obj, which will keep track of what exists in each cell
             var pos = "(" + j + "," + i + ")"; //gives us our position for these cells as a coordinate
             this.grid[pos] = newObj; //in our grid object, we'll have another object within it named the location such as grid { (0,1): {locationX: 0, locationY:0 .... } (0,2) : ... }
             var $td = document.createElement('td'); //create our cell element
