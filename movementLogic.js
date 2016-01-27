@@ -203,17 +203,27 @@ var hunterInitialSelect = function(clickedTile) {
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
+            if(cat && (gameGrid.grid[cat.id].hasPlayer == false) && colorbound1 == color && color == myPlayer){
             cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 2)+","+gameGrid.grid[clickedTile].locationY+")");
             if(cat && colorbound2 == color && color == myPlayer){ //2
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
+            }
             cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+gameGrid.grid[clickedTile].locationY+")");
             if(cat && colorbound3 == color && color == myPlayer){ //3
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
+            }
+            if(cat && (gameGrid.grid[cat.id].hasPlayer == false) && colorbound1 == color && color == myPlayer){
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 2)+","+gameGrid.grid[clickedTile].locationY+")");
+            if(cat && colorbound8 == color && color == myPlayer){//8
+            cat.classList.toggle("validH");
+            currentValidMoveLocations[currentNumOfValid] = cat.id;
+            currentNumOfValid++;
+            }
             }
             cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+(gameGrid.grid[clickedTile].locationY+1)+")");
             if(cat && colorbound4 == color && color == myPlayer){ //4
@@ -239,23 +249,19 @@ var hunterInitialSelect = function(clickedTile) {
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 2)+","+gameGrid.grid[clickedTile].locationY+")");
-            if(cat && colorbound8 == color && color == myPlayer){//8
-            cat.classList.toggle("validH");
-            currentValidMoveLocations[currentNumOfValid] = cat.id;
-            currentNumOfValid++;
-            }
             cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+1)+")");
             if(cat && colorbound9 == color && color == myPlayer){//9
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
+            if(cat && (gameGrid.grid[cat.id].hasPlayer == false) && colorbound1 == color && color == myPlayer){
             cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+2)+")");
             if(cat && colorbound10 == color && color == myPlayer){//10
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
+            }
             }
             cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-1)+")");
             if(cat && colorbound11 == color && color == myPlayer){//11
@@ -263,85 +269,95 @@ var hunterInitialSelect = function(clickedTile) {
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
+            if(cat && (gameGrid.grid[cat.id].hasPlayer == false) && colorbound1 == color && color == myPlayer){
             cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-2)+")");
             if(cat && colorbound12 == color && color == myPlayer){//12
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             } 
+            }
 }
             else {
-                var cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+gameGrid.grid[clickedTile].locationY+")");
+            var cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+gameGrid.grid[clickedTile].locationY+")");  //right tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 2)+","+gameGrid.grid[clickedTile].locationY+")");
+            if(cat && (gameGrid.grid[cat.id].hasPlayer == false)){
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 2)+","+gameGrid.grid[clickedTile].locationY+")"); //2 right tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+gameGrid.grid[clickedTile].locationY+")");
+            }
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+gameGrid.grid[clickedTile].locationY+")"); //left tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+(gameGrid.grid[clickedTile].locationY+1)+")");
+            if (cat && (gameGrid.grid[cat.id].hasPlayer == false)){
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 2)+","+gameGrid.grid[clickedTile].locationY+")"); // 2 left tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+(gameGrid.grid[clickedTile].locationY+1)+")");
+            }
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+(gameGrid.grid[clickedTile].locationY+1)+")"); //diagonal up left tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+(gameGrid.grid[clickedTile].locationY-1)+")");
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+(gameGrid.grid[clickedTile].locationY+1)+")"); //diagonal up right tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+(gameGrid.grid[clickedTile].locationY-1)+")");
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+(gameGrid.grid[clickedTile].locationY-1)+")"); //diagonal down left tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 2)+","+gameGrid.grid[clickedTile].locationY+")");
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+(gameGrid.grid[clickedTile].locationY-1)+")"); //diagonal down right tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+1)+")");
+            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+1)+")"); //up tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+2)+")");
+            if(cat && (gameGrid.grid[cat.id].hasPlayer == false)){
+            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+2)+")"); //2 up tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-1)+")");
+            }
+            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-1)+")"); //down tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
             }
-            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-2)+")");
+            if(cat && (gameGrid.grid[cat.id].hasPlayer == false)){
+            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-2)+")"); //2 down tile
             if(cat){
             cat.classList.toggle("validH");
             currentValidMoveLocations[currentNumOfValid] = cat.id;
             currentNumOfValid++;
+            }
             }
             }
             
@@ -531,106 +547,106 @@ var hunterDeselect = function(clickedTile){
 
 
     var cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+gameGrid.grid[clickedTile].locationY+")");
-            if(cat && colorbound1 == color&& color == myPlayer){
+            if(cat && colorbound1 == color && color == myPlayer){ //1
             cat.classList.toggle("validH");
             }
             cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 2)+","+gameGrid.grid[clickedTile].locationY+")");
-            if(cat && colorbound2 == color && color == myPlayer){
+            if(cat && (cat.classList.contains("validH")) && colorbound2 == color && color == myPlayer){ //2
             cat.classList.toggle("validH");
             }
             cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+gameGrid.grid[clickedTile].locationY+")");
-            if(cat && colorbound3 == color && color == myPlayer){
-            cat.classList.toggle("validH");
-            }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+(gameGrid.grid[clickedTile].locationY+1)+")");
-            if(cat && colorbound4 == color && color == myPlayer){
-            cat.classList.toggle("validH");
-            }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+(gameGrid.grid[clickedTile].locationY+1)+")");
-            if(cat && colorbound5 == color && color == myPlayer){
-            cat.classList.toggle("validH");
-            }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+(gameGrid.grid[clickedTile].locationY-1)+")");
-            if(cat && colorbound6 == color && color == myPlayer){
-            cat.classList.toggle("validH");
-            }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+(gameGrid.grid[clickedTile].locationY-1)+")");
-            if(cat && colorbound7 == color && color == myPlayer) {
+            if(cat && colorbound3 == color && color == myPlayer){ //3
             cat.classList.toggle("validH");
             }
             cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 2)+","+gameGrid.grid[clickedTile].locationY+")");
-            if(cat && colorbound8 == color && color == myPlayer){
-            cat.classList.toggle("validH");
-            }
-            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+1)+")");
-            if(cat && colorbound9 == color && color == myPlayer){
-            cat.classList.toggle("validH");
-            }
-            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+2)+")");
-            if(cat && colorbound10 == color && color == myPlayer){
-            cat.classList.toggle("validH");
-            }
-            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-1)+")");
-            if(cat && colorbound11 == color && color == myPlayer){
-            cat.classList.toggle("validH");
-            }
-            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-2)+")");
-            if(cat && colorbound12 == color && color == myPlayer){
-            cat.classList.toggle("validH");
-            }  
-        }
-            else{
-
-                var cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+gameGrid.grid[clickedTile].locationY+")");
-            if(cat){
-            cat.classList.toggle("validH");
-            }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 2)+","+gameGrid.grid[clickedTile].locationY+")");
-            if(cat){
-            cat.classList.toggle("validH");
-            }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+gameGrid.grid[clickedTile].locationY+")");
-            if(cat){
+            if(cat && (cat.classList.contains("validH")) && colorbound8 == color && color == myPlayer){//8
             cat.classList.toggle("validH");
             }
             cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+(gameGrid.grid[clickedTile].locationY+1)+")");
-            if(cat){
+            if(cat && colorbound4 == color && color == myPlayer){ //4
             cat.classList.toggle("validH");
             }
             cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+(gameGrid.grid[clickedTile].locationY+1)+")");
-            if(cat){
+            if(cat && colorbound5 == color && color == myPlayer){ //5
             cat.classList.toggle("validH");
             }
             cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+(gameGrid.grid[clickedTile].locationY-1)+")");
-            if(cat){
+            if(cat && colorbound6 == color && color == myPlayer){ //6
             cat.classList.toggle("validH");
             }
             cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+(gameGrid.grid[clickedTile].locationY-1)+")");
-            if(cat){
-            cat.classList.toggle("validH");
-            }
-            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 2)+","+gameGrid.grid[clickedTile].locationY+")");
-            if(cat){
+            if(cat && colorbound7 == color && color == myPlayer){//7
             cat.classList.toggle("validH");
             }
             cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+1)+")");
-            if(cat){
+            if(cat && colorbound9 == color && color == myPlayer){//9
             cat.classList.toggle("validH");
             }
             cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+2)+")");
-            if(cat){
+            if(cat && (cat.classList.contains("validH")) && colorbound10 == color && color == myPlayer){//10
             cat.classList.toggle("validH");
             }
             cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-1)+")");
-            if(cat){
+            if(cat && colorbound11 == color && color == myPlayer){//11
             cat.classList.toggle("validH");
             }
             cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-2)+")");
-            if(cat){
+            if(cat && (cat.classList.contains("validH"))  && colorbound12 == color && color == myPlayer){//12
             cat.classList.toggle("validH");
             } 
-            }
 }
+            else {
+            var cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+gameGrid.grid[clickedTile].locationY+")");  //right tile
+            if(cat){
+            cat.classList.toggle("validH");
+            }
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 2)+","+gameGrid.grid[clickedTile].locationY+")"); //2 right tile
+            if(cat && (cat.classList.contains("validH"))){
+            cat.classList.toggle("validH");
+            }
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+gameGrid.grid[clickedTile].locationY+")"); //left tile
+            if(cat){
+            cat.classList.toggle("validH");
+            }
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 2)+","+gameGrid.grid[clickedTile].locationY+")"); // 2 left tile
+            if(cat && (cat.classList.contains("validH"))){
+            cat.classList.toggle("validH");
+            }
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+(gameGrid.grid[clickedTile].locationY+1)+")"); //diagonal up left tile
+            if(cat){
+            cat.classList.toggle("validH");
+            }
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+(gameGrid.grid[clickedTile].locationY+1)+")"); //diagonal up right tile
+            if(cat){
+            cat.classList.toggle("validH");
+            }
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX - 1)+","+(gameGrid.grid[clickedTile].locationY-1)+")"); //diagonal down left tile
+            if(cat){
+            cat.classList.toggle("validH");
+            }
+            cat = document.getElementById("("+(gameGrid.grid[clickedTile].locationX + 1)+","+(gameGrid.grid[clickedTile].locationY-1)+")"); //diagonal down right tile
+            if(cat){
+            cat.classList.toggle("validH");
+            }
+            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+1)+")"); //up tile
+            if(cat){
+            cat.classList.toggle("validH");
+            }     
+            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY+2)+")"); //2 up tile
+            if(cat && (cat.classList.contains("validH"))){
+            cat.classList.toggle("validH");
+            }
+            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-1)+")"); //down tile
+            if(cat){
+            cat.classList.toggle("validH");
+            }
+            cat = document.getElementById("("+gameGrid.grid[clickedTile].locationX+","+(gameGrid.grid[clickedTile].locationY-2)+")"); //2 down tile
+            if(cat && (cat.classList.contains("validH"))){
+            cat.classList.toggle("validH");
+            }
+            }
+            
+        }
 
 var thiefDeselect = function(clickedTile){
     for(var i=1; i<gameGrid.size; i++){
